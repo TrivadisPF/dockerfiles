@@ -1,5 +1,5 @@
 zookeeper:
-  image: trivadisbds/zookeeper
+  image: trivadisbds/apache-zookeeper
   container_name: zookeeper
   hostname: zookeeper
   net: bridge
@@ -7,7 +7,7 @@ zookeeper:
     - "2181:2181"
 
 nimbus:
-  image: trivadisbds/storm-nimbus
+  image: trivadisbds/apache-storm-nimbus
   container_name: storm-nimbus
   hostname: storm-nimbus
   net: bridge
@@ -27,7 +27,7 @@ nimbus:
     - "DRPCI_PORT=49773"
 
 supervisor:
-  image: trivadisbds/storm-supervisor
+  image: trivadisbds/apache-storm-supervisor
   container_name: storm-supervisor
   hostname: storm-supervisor
   net: bridge
@@ -46,7 +46,7 @@ supervisor:
     - "ZOOKEEPER_PORT=2181"
 
 ui:
-  image: trivadisbds/storm-ui
+  image: trivadisbds/apache-storm-ui
   container_name: storm-ui
   hostname: storm-ui
   net: bridge
