@@ -2,7 +2,7 @@ FROM trivadisbds/base
 MAINTAINER Guido Schmutz <guido.schmutz@trivadis.com>
 
 ENV ZOOKEEPER_MIRROR ftp://mirror.switch.ch/mirror/apache/dist/zookeeper/
-ENV ZOOKEEPER_VERSION zookeeper-3.5.1-alpha
+ENV ZOOKEEPER_VERSION zookeeper-3.4.6
 
 RUN yum update && yum install -y wget \
 	&& wget -q -O - $ZOOKEEPER_MIRROR/$ZOOKEEPER_VERSION/$ZOOKEEPER_VERSION.tar.gz | tar -xzf - -C /opt \
