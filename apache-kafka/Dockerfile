@@ -1,9 +1,9 @@
 # based on work of wurstmeiser: https://github.com/wurstmeister/kafka-docker
-FROM trivadisbds/base
+FROM trivadisbds/base:ubuntu
 
 MAINTAINER Guido Schmutz <guido.schmutz@trivadis.com>
 
-RUN yum update -y; yum install -y unzip wget curl docker jq coreutils
+RUN apt-get update -y; apt-get install -y unzip wget curl docker jq coreutils
 
 ENV SCALA_VERSION 2.11 
 ENV KAFKA_VERSION 0.9.0.1
