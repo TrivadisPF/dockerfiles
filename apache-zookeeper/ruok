@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+echo ruok | nc localhost 2181

@@ -1,0 +1,65 @@
+zookeeper:
+  image: trivadisbds/zookeeper
+  container_name: zookeeper
+  hostname: zookeeper
+  net: bridge
+  ports: 
+    - "2181:2181"
+
+nimbus:
+  image: trivadisbds/storm-nimbus
+  container_name: storm-nimbus
+  hostname: storm-nimbus
+  net: bridge
+  ports:
+    - "49773:49772"
+    - "49772:49773"
+    - "49627:49627"
+  links:
+   - zookeeper
+  environment: 
+    - "LOCAL_HOSTNAME=storm-nimbus"
+    - "ZOOKEEPER_ADDRESS=zookeeper"
+    - "ZOOKEEPER_PORT=2181"
+    - "NIMBUS_ADDRESS=storm-nimbus"
+    - "NIMBUS_THRIFT_PORT=49627"
+    - "DRPC_PORT=49772"
+    - "DRPCI_PORT=49773"
+
+supervisor:
+  image: trivadisbds/storm-supervisor
+  container_name: storm-supervisor
+  hostname: storm-supervisor
+  net: bridge
+  ports:
+    - "8000:8000"
+  links:
+    - zookeeper
+    - nimbus
+  environment:
+    - "LOCAL_HOSTNAME=storm-supervisor"
+    - "NIMBUS_ADDRESS=storm-nimbus"
+    - "NIMBUS_THRIFT_PORT=49627"
+    - "DRPC_PORT=49772"
+    - "DRPCI_PORT=49773"
+    - "ZOOKEEPER_ADDRESS=zookeeper"
+    - "ZOOKEEPER_PORT=2181"
+
+ui:
+  image: trivadisbds/storm-ui
+  container_name: storm-ui
+  hostname: storm-ui
+  net: bridge
+  ports:
+    - "49080:8080"
+  links:
+    - zookeeper
+    - nimbus
+  environment:
+    - "LOCAL_HOSTNAME=storm-ui"
+    - "NIMBUS_ADDRESS=storm-nimbus"
+    - "NIMBUS_THRIFT_PORT=49627"
+    - "DRPC_PORT=49772"
+    - "DPRCI_PORT=49773"
+    - "ZOOKEEPER_ADDRESS=zookeeper"
+    - "ZOOKEEPER_PORT=2181"

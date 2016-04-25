@@ -1,0 +1,10 @@
+storm.local.hostname: "%local.hostname%"
+storm.zookeeper.servers:
+  - "%zookeeper%"
+storm.zookeeper.port: %zookeeper.port%
+nimbus.host: "%nimbus%"
+nimbus.thrift.port: %nimbus.thrift.port%
+drpc.servers:
+  - "%nimbus%"
+drpc.port: %drpc.port%
+drpc.invocations.port: %drpci.port%
