@@ -1,5 +1,5 @@
 zookeeper:
-  image: trivadisbds/zookeeper
+  image: trivadisbds/apache-zookeeper
   ports: 
     - "2181"
 kafka:
