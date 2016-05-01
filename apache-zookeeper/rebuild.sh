@@ -1,3 +1,3 @@
 VERSION=latest
 
-docker build -t="trivadisbds/apache-zookeeper:$VERSION" .
+docker build -t="trivadisbds/zookeeper:$VERSION" .
