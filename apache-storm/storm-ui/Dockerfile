@@ -1,4 +1,4 @@
-FROM trivadisbds/apache-storm:latest
+FROM trivadisbds/storm:latest
 MAINTAINER Markus Mayer <widemeadows@gmail.com>
 
 RUN /usr/bin/config-supervisord.sh ui
