@@ -1,4 +1,4 @@
-FROM trivadisbds/base
+FROM trivadisbds/base:ubuntu
 
 MAINTAINER guido.schmutz@trivadis.com 
 
