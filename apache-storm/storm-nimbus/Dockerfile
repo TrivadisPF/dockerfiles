@@ -1,4 +1,4 @@
-FROM trivadisbds/apache-storm:latest
+FROM trivadisbds/storm:latest
 MAINTAINER Guido Schmutz <guido.schmutz@trivadis.com>
 
 RUN /usr/bin/config-supervisord.sh nimbus 
