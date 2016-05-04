@@ -16,7 +16,7 @@ nimbus:
     - "49772:49773"
     - "49627:49627"
   links:
-   - zookeeper
+    - zookeeper
   environment: 
     - "LOCAL_HOSTNAME=storm-nimbus"
     - "ZOOKEEPER_ADDRESS=zookeeper"
