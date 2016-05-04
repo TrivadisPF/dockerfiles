@@ -17,15 +17,7 @@ nimbus:
     - "49627:49627"
   links:
     - zookeeper
-  environment: 
-    - "LOCAL_HOSTNAME=storm-nimbus"
-    - "ZOOKEEPER_ADDRESS=zookeeper"
-    - "ZOOKEEPER_PORT=2181"
-    - "NIMBUS_ADDRESS=storm-nimbus"
-    - "NIMBUS_THRIFT_PORT=49627"
-    - "DRPC_PORT=49772"
-    - "DRPCI_PORT=49773"
-
+  
 supervisor:
   image: trivadisbds/storm-supervisor
   container_name: storm-supervisor
@@ -36,15 +28,7 @@ supervisor:
   links:
     - zookeeper
     - nimbus
-  environment:
-    - "LOCAL_HOSTNAME=storm-supervisor"
-    - "NIMBUS_ADDRESS=storm-nimbus"
-    - "NIMBUS_THRIFT_PORT=49627"
-    - "DRPC_PORT=49772"
-    - "DRPCI_PORT=49773"
-    - "ZOOKEEPER_ADDRESS=zookeeper"
-    - "ZOOKEEPER_PORT=2181"
-
+  
 ui:
   image: trivadisbds/storm-ui
   container_name: storm-ui
@@ -55,11 +39,4 @@ ui:
   links:
     - zookeeper
     - nimbus
-  environment:
-    - "LOCAL_HOSTNAME=storm-ui"
-    - "NIMBUS_ADDRESS=storm-nimbus"
-    - "NIMBUS_THRIFT_PORT=49627"
-    - "DRPC_PORT=49772"
-    - "DPRCI_PORT=49773"
-    - "ZOOKEEPER_ADDRESS=zookeeper"
-    - "ZOOKEEPER_PORT=2181"
+  
