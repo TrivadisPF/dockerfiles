@@ -1,9 +1,11 @@
-FROM trivadisbds/storm:latest
-MAINTAINER Guido Schmutz <guido.schmutz@trivadis.com>
+FROM trivadisbds/storm:1.0.0
+MAINTAINER Guido Schmutz
 
 RUN /usr/bin/config-supervisord.sh nimbus 
 RUN /usr/bin/config-supervisord.sh drpc
 
-EXPOSE 3772 3773 6627 
-
-CMD /usr/bin/start-supervisord.sh
+EXPOSE 6627
+EXPOSE 3772
+EXPOSE 3773
+ADD start-supervisor.sh /usr/bin/start-supervisor.sh
+CMD /usr/bin/start-supervisor.sh
