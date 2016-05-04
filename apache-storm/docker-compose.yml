@@ -1,42 +1,30 @@
 zookeeper:
   image: trivadisbds/zookeeper
-  container_name: zookeeper
-  hostname: zookeeper
-  net: bridge
   ports: 
-    - "2181:2181"
-
+    - "49181:2181"
+    - "22"
 nimbus:
   image: trivadisbds/storm-nimbus
-  container_name: storm-nimbus
-  hostname: storm-nimbus
-  net: bridge
   ports:
-    - "49773:49772"
-    - "49772:49773"
-    - "49627:49627"
-  links:
-    - zookeeper
-  
+    - "49773:3773"
+    - "49772:3772"
+    - "49627:6627"
+    - "22"
+  links: 
+    - zookeeper:zk
 supervisor:
   image: trivadisbds/storm-supervisor
-  container_name: storm-supervisor
-  hostname: storm-supervisor
-  net: bridge
   ports:
-    - "8000:8000"
-  links:
-    - zookeeper
-    - nimbus
-  
+    - "8000"
+    - "22"
+  links: 
+    - nimbus:nimbus
+    - zookeeper:zk
 ui:
   image: trivadisbds/storm-ui
-  container_name: storm-ui
-  hostname: storm-ui
-  net: bridge
   ports:
     - "49080:8080"
-  links:
-    - zookeeper
-    - nimbus
-  
+    - "22"
+  links: 
+    - nimbus:nimbus
+    - zookeeper:zk
