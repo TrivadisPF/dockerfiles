@@ -5,7 +5,7 @@ FROM trivadisbds/base:ubuntu
 MAINTAINER Guido Schmutz <guido.schmutz@trivadis.com>
 
 RUN apt-get update -y && \
-    apt-get install -y git wget unzip which && \
+    apt-get install -y git wget unzip && \
     apt-get clean all
 
 ENV ZK_HOSTS=localhost:2181 \
@@ -21,8 +21,9 @@ RUN mkdir -p /tmp && \
     echo 'scalacOptions ++= Seq("-Xmax-classfile-name", "200")' >> build.sbt && \
     ./sbt clean dist && \
     unzip  -d / ./target/universal/kafka-manager-${KM_VERSION}.zip && \
-    rm -fr /tmp/* /root/.sbt /root/.ivy2 && \
-    printf '#!/bin/sh\nexec ./bin/kafka-manager -Dconfig.file=${KM_CONFIGFILE} "${KM_ARGS}" "${@}"\n' > /kafka-manager-${KM_VERSION}/km.sh && \
+    rm -fr /tmp/* /root/.sbt /root/.ivy2 
+
+RUND printf '#!/bin/sh\nexec ./bin/kafka-manager -Dconfig.file=${KM_CONFIGFILE} "${KM_ARGS}" "${@}"\n' > /kafka-manager-${KM_VERSION}/km.sh && \
     chmod +x /kafka-manager-${KM_VERSION}/km.sh
 
 WORKDIR /kafka-manager-${KM_VERSION}
