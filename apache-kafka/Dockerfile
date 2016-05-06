@@ -2,7 +2,7 @@ FROM trivadisbds/base:ubuntu
 
 MAINTAINER Guido Schmutz  <guido.schmutz@trivadis.com>
 
-RUN apt-get update && aapt-get install -y unzip wget curl docker jq coreutils
+RUN apt-get update && apt-get install -y unzip wget curl docker jq coreutils
 
 ENV KAFKA_VERSION="0.9.0.1" SCALA_VERSION="2.11"
 ADD download-kafka.sh /tmp/download-kafka.sh
