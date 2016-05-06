@@ -10,7 +10,8 @@ kafka:
     - zookeeper:zk
   environment:
     KAFKA_ADVERTISED_HOST_NAME: 192.168.69.135
-    KAFKA_DELETE_TOPIC_ENABLE: "true"    
-    KAFKA_CREATE_TOPICS: "cra.tweet-status-v2:1:3"
+    KAFKA_DELETE_TOPIC_ENABLE: "true"
+    KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'false'    
+    KAFKA_CREATE_TOPICS: "cra.status-stream-v3.avro:1:3,cra.status-stream-v4.avro:1:3"
   volumes:
     - /var/run/docker.sock:/var/run/docker.sock
