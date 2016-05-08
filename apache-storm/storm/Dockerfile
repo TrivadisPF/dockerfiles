@@ -2,7 +2,7 @@ FROM trivadisbds/base:ubuntu
 
 MAINTAINER Guido Schmutz (guido.schmutz@trivadis.com) 
 
-ENV STORM_DL_VERSION apache-storm-1.0.0
+ENV STORM_DL_VERSION apache-storm-1.0.1
 ENV STORM_DL_MIRROR ftp://mirror.switch.ch/mirror/apache/dist/storm/
 
 RUN wget -q -O - ${STORM_DL_MIRROR}${STORM_DL_VERSION}/$STORM_DL_VERSION.tar.gz | tar -xzf - -C /opt
