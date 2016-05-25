@@ -1,4 +1,4 @@
-FROM trivadisbds/storm:1.0.0
+FROM trivadisbds/storm:1.0.1
 MAINTAINER Guido Schmutz
 
 EXPOSE 6700
