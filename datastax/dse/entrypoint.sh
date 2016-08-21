@@ -61,7 +61,5 @@ if [ "$1" = 'dse' -a "$2" = 'cassandra' ]; then
   done
 fi
 
-echo "JAVA_HOME=/usr/lib/jvm/java-8-oracle" >> /opt/dse/resources/cassandra/conf/cassandra-env.sh
-
 # Run the command
 exec "$@"

@@ -1,5 +1,4 @@
 FROM trivadisbds/base:ubuntu
-#FROM debian:jessie-backports
 
 MAINTAINER Guido Schmutz <guido.schmutz@trivadis.com>
 
@@ -8,7 +7,7 @@ RUN groupadd -r dse --gid=999 \
     && useradd -r -g dse --uid=999 dse
 
 # gosu for easy step down from root
-ENV GOSU_VERSION 1.7
+ENV GOSU_VERSION 1.9
 RUN set -x \
     && apt-get update && apt-get install -y --no-install-recommends ca-certificates wget && rm -rf /var/lib/apt/lists/* \
     && wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)" \
@@ -18,15 +17,14 @@ RUN set -x \
     && gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu \
     && rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc \
     && chmod +x /usr/local/bin/gosu \
-    && gosu nobody true \
-    && apt-get purge -y --auto-remove ca-certificates wget
+    && gosu nobody true 
 
 # Install JRE and Python prereqs
 RUN set -x \
     && apt-get update \
     && apt-get install -y python \
                           python-support \
-    && rm -rf /var/lib/apt/lists/*
+&& rm -rf /var/lib/apt/lists/*
     
 # Get the version of DSE we're installing from the build argument
 ARG DSE_VERSION
@@ -42,7 +40,9 @@ RUN ln -s /opt/dse* /opt/dse \
 
 # Append DSE binaries directory to the PATH so we can execute them from any working directory
 ENV PATH /opt/dse/bin:$PATH
-ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
+
+# add JAVA_HOME
+# RUN echo "JAVA_HOME=/usr/lib/jvm/java-8-oracle" >> /opt/dse/resources/cassandra/conf/cassandra-env.sh
 
 # Create directories for Cassandra and Spark data
 RUN mkdir -p /var/lib/cassandra /var/lib/spark /var/log/cassandra /var/log/spark \
