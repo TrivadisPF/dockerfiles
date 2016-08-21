@@ -10,7 +10,7 @@ As the image is using software from DataStax, it can not be provided on Docker H
 
 ## Downloading and Building DSE
 
-1. First download the software into the folder where the Dockerfile resides. Replace <username> and <password> by your DataStax credentials.
+1. First download the software into the folder where the Dockerfile resides. Replace &lt;username&gt; and &lt;password&gt; by your DataStax credentials.
 
     	$ curl --user <username>:<password> -L http://downloads.datastax.com/enterprise/dse-5.0.2-bin.tar.gz > dse-5.0.2-bin.tar.gz
 
