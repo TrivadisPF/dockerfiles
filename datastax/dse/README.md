@@ -8,11 +8,13 @@ The git repo for running an instance of DataStax Enterprise in Docker. See the  
 
 As the image is using software from DataStax, it can not be provided on Docker Hub and you have to build it yourself. 
 
-First download the software into the folder where the Dockerfile resides. 
+## Downloading and Building DSE
+
+1. First download the software into the folder where the Dockerfile resides. Replace <username> and <password> by your DataStax credentials.
 
     $ curl --user <username>:<password> -L http://downloads.datastax.com/enterprise/dse-5.0.2-bin.tar.gz > dse-5.0.2-bin.tar.gz
 
-Now you can build it using the following command. 
+2. Now you can build it using the following command. 
 
     $ docker build --build-arg DSE_VERSION=5.0.2 -t trivadisbds/dse -t trivadisbds/dse:5.0.2 .
 
