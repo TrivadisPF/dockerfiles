@@ -63,4 +63,4 @@ docker logs some-dse
 
 [whitepaper]: http://www.datastax.com/wp-content/uploads/resources/DataStax-WP-Best_Practices_Running_DSE_Within_Docker.pdf
 [repo]: https://github.com/TrivadisBDS/dockerfiles
-[dse-start]: http://docs.datastax.com/en/datastax_enterprise/4.8/datastax_enterprise/startStop/refDseStandalone.html
+[dse-start]: http://docs.datastax.com/en/latest-dse/datastax_enterprise/admin/startDseStandalone.html?hl=start
