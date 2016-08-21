@@ -10,7 +10,11 @@ As the image is using software from DataStax, it can not be provided on Docker H
 
 First download the software into the folder where the Dockerfile resides. 
 
-      $ curl --user <username>:<password> -L http://downloads.datastax.com/enterprise/dse-5.0.2-bin.tar.gz > dse-5.0.2-bin.tar.gz
+$ curl --user <username>:<password> -L http://downloads.datastax.com/enterprise/dse-5.0.2-bin.tar.gz > dse-5.0.2-bin.tar.gz
+
+Now you can build it using the following command. 
+
+$ docker build --build-arg DSE_VERSION=5.0.2 -t trivadisbds/dse -t trivadisbds/dse:5.0.2 .
 
 [whitepaper]: http://www.datastax.com/wp-content/uploads/resources/DataStax-WP-Best_Practices_Running_DSE_Within_Docker.pdf
 [hub]: https://hub.docker.com/r/trivadisbds/dse/
