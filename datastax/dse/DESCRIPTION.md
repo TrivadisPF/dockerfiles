@@ -8,12 +8,12 @@ The repository for this image is [available on GitHub][repo]. Please use that to
 
 Start a DSE node in Cassandra mode:
 ```
-docker run --name some-dse -d luketillman/datastax-enterprise:tag
+docker run --name some-dse -d trivadisbds/dse:tag
 ```
 
 The default command is to run `dse`, so the [usual flags][dse-start] are available as well. For example, to start a Search node just add the `-s` flag:
 ```
-docker run --name some-dse -d luketillman/datastax-enterprise:tag -s
+docker run --name some-dse -d trivadisbds/dse:tag -s
 ```
 
 ## Starting Related Tools
@@ -62,5 +62,5 @@ docker logs some-dse
 ```
 
 [whitepaper]: http://www.datastax.com/wp-content/uploads/resources/DataStax-WP-Best_Practices_Running_DSE_Within_Docker.pdf
-[repo]: https://github.com/LukeTillman/dse-docker
+[repo]: https://github.com/TrivadisBDS/dockerfiles
 [dse-start]: http://docs.datastax.com/en/datastax_enterprise/4.8/datastax_enterprise/startStop/refDseStandalone.html
