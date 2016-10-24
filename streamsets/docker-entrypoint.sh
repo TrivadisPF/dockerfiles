@@ -32,6 +32,6 @@ for e in $(env); do
   fi
 done
 
-if [ "$ADDL_LIBRARIES" != "" ]; then ${SDC_DIST}/bin/streamsets stagelibs -install="${ADDL_LIBRARIES}"; fi
+if [ "$ADD_LIBS" != "" ]; then ${SDC_DIST}/bin/streamsets stagelibs -install="${ADD_LIBS}"; fi
 
 exec "${SDC_DIST}/bin/streamsets" "$@"
