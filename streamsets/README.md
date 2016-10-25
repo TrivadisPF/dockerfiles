@@ -7,16 +7,24 @@ You can find more information about the usage on my blog here(https://guidoschmu
 
 Basic Usage
 -----------
-`docker run -p 18630:18630 -d --name sdc -e ADD_LIBS="streamsets-datacollector-apache-kafka_0_10-lib,streamsets-datacollector-apache-kudu-0_9-lib" trivadisbds/streamsets-datacollector:latest`
-
+```
+docker run -p 18630:18630 -d 
+           --name sdc 
+           -e ADD_LIBS="streamsets-datacollector-apache-kafka_0_10-lib,streamsets-datacollector-apache-kudu-0_9-lib"     
+           trivadisbds/streamsets-datacollector:latest`
+```
 Detailed Usage
 --------------
 *   You can pass the stage libraries through the environment variable ADD_LIBS
 
 The following example starts SDC with Kafka v0.10 and Kudu 0.9 libraries installed:
 
-`docker run -p 18630:18630 -d --name sdc -e ADD_LIBS="streamsets-datacollector-apache-kafka_0_10-lib,streamsets-datacollector-apache-kudu-0_9-lib" trivadisbds/streamsets-datacollector:latest`
-
+```
+docker run -p 18630:18630 -d 
+           --name sdc 
+           -e ADD_LIBS="streamsets-datacollector-apache-kafka_0_10-lib,streamsets-datacollector-apache-kudu-0_9-lib"     
+           trivadisbds/streamsets-datacollector:latest`
+```
 
 Building your own version
 -------------------------
