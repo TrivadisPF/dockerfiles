@@ -4,7 +4,7 @@ services:
     
   # DataStax Enterprise
   dse:
-    image: trivadisbds/dse:5.0.2
+    image: trivadisbds/dse:5.0.3
     entrypoint: /entrypoint.sh -g -s
     ports:
     - "9042:9042"
@@ -17,7 +17,8 @@ services:
       memlock: -1
     environment:
       SERVICE_9042_NAME: cassandra
-
+    volumes:
+    - "/home/armasuisse/data/cassandra:/var/lib/cassandra"
   dse-studio:
     image: trivadisbds/dse-studio:1.0.0
     ports:
