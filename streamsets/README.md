@@ -2,7 +2,8 @@
 
 You must accept the [Oracle Binary Code License Agreement for Java SE](http://www.oracle.com/technetwork/java/javase/terms/license/index.html) to use this image.
 
-This docker image extends StreamSets version of [dockerized StreamSets Data Collector (SDC)](https://hub.docker.com/r/streamsets/datacollector/). It supports adding additional stage libraries either at build time or at run time. If you want to use the build time support, then of course you can not use this image on DockerHub, bu have to built the image by yourself. 
+This docker image extends StreamSets version of [dockerized StreamSets Data Collector (SDC)](https://hub.docker.com/r/streamsets/datacollector/). It supports adding additional stage libraries either at build time or at run time. If you want to use the build time support, then of course you can not use this image on DockerHub, but have to built the image by yourself. 
+You can find more information about the usage on my blog here(https://guidoschmutz.wordpress.com/2016/10/25/additional-stage-libraries-with-dockerized-streamsets/).
 
 Basic Usage
 -----------
