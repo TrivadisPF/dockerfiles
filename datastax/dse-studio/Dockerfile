@@ -24,4 +24,4 @@ EXPOSE 9091
 
 RUN sed -i '/httpBindAddress/c\\ httpBindAddress:\ 0.0.0.0' /opt/datastax-studio/conf/configuration.yaml
 
-CMD /opt/datastax-studio-1.0.0/bin/server.sh
+CMD /opt/datastax-studio-${DSE_STUDIO_VERSION}/bin/server.sh
