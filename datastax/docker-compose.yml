@@ -25,3 +25,7 @@ services:
       - "9091:9091"
     links: 
       - dse:dse
+  dse-graphloader:
+    image: trivadisbds/dse-graphloader:5.0.5
+    links: 
+      - dse:dse

@@ -23,7 +23,6 @@ RUN set -x \
 RUN set -x \
     && apt-get update \
     && apt-get install -y python \
-                          python-support \
 && rm -rf /var/lib/apt/lists/*
     
 # Get the version of DSE we're installing from the build argument
