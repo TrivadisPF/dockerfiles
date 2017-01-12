@@ -7,7 +7,7 @@ As the image is using software from DataStax, it can not be provided on Docker H
 
 1. First download the software into the folder where the Dockerfile resides. Replace &lt;username&gt; and &lt;password&gt; by your DataStax credentials.
 
-    	$ curl --user <uzsername>:<password> -L http://downloads.datastax.com/enterprise/datastax-studio-1.0.2.tar.gz > datastax-studio-1.0.2.tar.gz
+    	$ curl --user <username>:<password> -L http://downloads.datastax.com/enterprise/datastax-studio-1.0.2.tar.gz > datastax-studio-1.0.2.tar.gz
 
 2. Now you can build it using the following command. 
 
