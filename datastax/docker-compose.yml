@@ -18,7 +18,7 @@ services:
     environment:
       SERVICE_9042_NAME: cassandra
     volumes:
-    - "/home/armasuisse/data/cassandra:/var/lib/cassandra"
+    - "./data/cassandra:/var/lib/cassandra"
   dse-studio:
     image: trivadisbds/dse-studio:1.0.2
     ports:
@@ -27,5 +27,7 @@ services:
       - dse:dse
   dse-graphloader:
     image: trivadisbds/dse-graphloader:5.0.5
+    volumes:
+    - "./data/loader:/data"
     links: 
       - dse:dse
