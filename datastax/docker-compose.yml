@@ -31,3 +31,4 @@ services:
     - "./data/loader:/data"
     links: 
       - dse:dse
+   

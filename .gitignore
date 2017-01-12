@@ -2,3 +2,7 @@
 datastax/dse/dse-5.0.3-bin.tar.gz
 
 *.gz
+
+datastax/dse-studio/Dockerfile.save
+
+
