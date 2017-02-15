@@ -4,7 +4,7 @@ services:
     
   # DataStax Enterprise
   dse:
-    image: trivadisbds/dse:5.0.5
+    image: trivadisbds/dse:5.0.6
     entrypoint: /entrypoint.sh -g -s
     ports:
     - "9042:9042"
