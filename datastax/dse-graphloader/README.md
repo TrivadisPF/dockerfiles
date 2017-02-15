@@ -7,11 +7,11 @@ As the image is using software from DataStax, it can not be provided on Docker H
 
 1. First download the software into the folder where the Dockerfile resides. Replace &lt;username&gt; and &lt;password&gt; by your DataStax credentials.
 
-    	$ curl --user <username>:<password> -L http://downloads.datastax.com/enterprise/dse-graph-loader-5.0.5-bin.tar.gz > dse-graph-loader-5.0.5-bin.tar.gz
+    	$ curl --user <username>:<password> -L http://downloads.datastax.com/enterprise/dse-graph-loader-5.0.6-bin.tar.gz > dse-graph-loader-5.0.6-bin.tar.gz
 
 2. Now you can build it using the following command. 
 
-    	$ docker build --build-arg DSE_GRAPHLOADER_VERSION=5.0.5 -t trivadisbds/dse-graphloader -t trivadisbds/dse-graphloader:5.0.5 .
+    	$ docker build --build-arg DSE_GRAPHLOADER_VERSION=5.0.6 -t trivadisbds/dse-graphloader -t trivadisbds/dse-graphloader:5.0.6 .
 
 [whitepaper]: http://www.datastax.com/wp-content/uploads/resources/DataStax-WP-Best_Practices_Running_DSE_Within_Docker.pdf
 [hub]: https://hub.docker.com/r/trivadisbds/dse/
