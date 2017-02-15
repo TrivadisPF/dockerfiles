@@ -26,7 +26,7 @@ services:
     links: 
       - dse:dse
   dse-graphloader:
-    image: trivadisbds/dse-graphloader:5.0.5
+    image: trivadisbds/dse-graphloader:5.0.6
     volumes:
     - "./data/loader:/data"
     links: 
