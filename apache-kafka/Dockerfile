@@ -5,7 +5,7 @@ ARG scala_version=2.12
 
 MAINTAINER Guido Schmutz  <guido.schmutz@trivadis.com>
 
-RUN apt-get update && apt-get install -y unzip wget curl docker jq coreutils
+RUN apt-get update && apt-get install -y unzip wget curl docker jq coreutils net-tools
 
 ENV KAFKA_VERSION=$kafka_version SCALA_VERSION=$scala_version
 ADD download-kafka.sh /tmp/download-kafka.sh
