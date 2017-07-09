@@ -4,7 +4,7 @@ MAINTAINER Guido Schmutz  <guido.schmutz@trivadis.com>
 
 RUN apt-get update && apt-get install -y unzip wget curl docker jq coreutils
 
-ENV KAFKA_VERSION="0.10.1.1" SCALA_VERSION="2.11"
+ENV KAFKA_VERSION="0.11.0.0" SCALA_VERSION="2.11"
 ADD download-kafka.sh /tmp/download-kafka.sh
 RUN /tmp/download-kafka.sh && tar xfz /tmp/kafka_${SCALA_VERSION}-${KAFKA_VERSION}.tgz -C /opt && rm /tmp/kafka_${SCALA_VERSION}-${KAFKA_VERSION}.tgz
 
