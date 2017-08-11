@@ -9,5 +9,4 @@ RUN apt-get update && \
     apt-get -y upgrade && \
     apt-get install -y curl python && \
     curl -s "https://d3kbcqa49mib13.cloudfront.net/spark-${SPARK_VERSION}.tgz" | tar zx -C /opt && \
-    mv "/opt/spark-${SPARK_VERSION}" /opt/spark && \
-rm /opt/spark/lib/spark-examples-*.jar
+    mv "/opt/spark-${SPARK_VERSION}" /opt/spark
