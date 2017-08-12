@@ -1,7 +1,7 @@
 FROM mesosphere/mesos:1.3.0
 MAINTAINER Guido Schmutz <guido.schmutz@trivadis.com>
 
-ENV MESOS_NATIVE_LIBRARY /usr/local/lib/libmesos.so
+ENV MESOS_NATIVE_JAVA_LIBRARY /usr/local/lib/libmesos.so
 
 ENV SPARK_VERSION 2.2.0-bin-hadoop2.7
 
