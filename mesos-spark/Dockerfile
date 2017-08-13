@@ -1,4 +1,4 @@
-FROM trivadisbds/mesos:1.3.0-2.2.0
+FROM mesosphere/mesos:1.3.0
 MAINTAINER Trivadis <guido.schmutz@trivadis.com>
 
 ENV MESOS_NATIVE_JAVA_LIBRARY /usr/local/lib/libmesos.so
