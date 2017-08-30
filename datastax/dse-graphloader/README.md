@@ -11,7 +11,7 @@ As the image is using software from DataStax, it can not be provided on Docker H
 
 2. Now you can build it using the following command. 
 
-    	$ docker build --build-arg DSE_GRAPHLOADER_VERSION=5.0.6 -t trivadisbds/dse-graphloader -t trivadisbds/dse-graphloader:5.0.6 .
+    	$ docker build --build-arg DSE_GRAPHLOADER_VERSION=5.1.2 -t trivadisbds/dse-graphloader -t trivadisbds/dse-graphloader:5.1.2 .
 
 [whitepaper]: http://www.datastax.com/wp-content/uploads/resources/DataStax-WP-Best_Practices_Running_DSE_Within_Docker.pdf
 [hub]: https://hub.docker.com/r/trivadisbds/dse/
