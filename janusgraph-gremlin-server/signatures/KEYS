@@ -1,0 +1,87 @@
+This file contains the GPG keys of JanusGraph developers.
+
+Users:    gpg --import KEYS
+
+Developers:
+  Create a key:
+    gpg --gen-key
+
+  Adding your key to this file:
+    (gpg --list-sigs <key id> && gpg --armor --export <key id>) >> this file.
+
+  Publish the key:
+    gpg --keyserver pgp.mit.edu --send-keys <key id>
+
+  Signing another developers key:
+    gpg --keyserver pgp.mit.edu --search-keys <name or email>
+    gpg --keyserver pgp.mit.edu --recv-keys <key id>
+    gpg --sign-key <key id>
+    gpg --keyserver pgp.mit.edu --send-keys <key id>
+
+  Additional Information:
+    http://www.apache.org/dev/openpgp.html#generate-key
+
+********************************* PLEASE NOTE **********************************
+
+  Releases will be signed using one of these keys in this file. This file will
+  be available with the distributed JanusGraph releases.
+
+********************************************************************************
+pub   rsa4096 2016-08-24 [SC]
+      D3C95553EE39B05E350D959CA39CC3ADAEAEF36E
+uid           [ultimate] Theodore Ratte Wilmes (CODE SIGNING KEY) <twilmes@apache.org>
+sig 3        A39CC3ADAEAEF36E 2016-08-24  Theodore Ratte Wilmes (CODE SIGNING KEY) <twilmes@apache.org>
+sub   rsa4096 2016-08-24 [E]
+sig          A39CC3ADAEAEF36E 2016-08-24  Theodore Ratte Wilmes (CODE SIGNING KEY) <twilmes@apache.org>
+
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+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
+j54vu/DpmJlQaEPeX62P1NPwA770npVbkHYt
+=LuuE
+-----END PGP PUBLIC KEY BLOCK-----
