@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+  cassandra:
+    image: cassandra:2.1
+    ports:
+      - "9160:9160"
+      - "9042:9042"
+
+  elasticsearch:
+    image: elasticsearch:1.5
+    ports:
+      - "9300:9300"
+
+  janusgraph:
+    image: trivadisbds/janusgraph-gremlin-server:0.1.1
+    depends_on:
+      - cassandra
+      - elasticsearch
+    volumes:
+      - ./conf/janusgraph-cassandra-es.properties:/janusgraph-0.1.1-hadoop2/conf/janusgraph-cassandra-es.properties
+
