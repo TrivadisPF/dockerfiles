@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -yq --no-install-recommends --force-yes \
 # Overall ENV vars
 ENV SPARK_VERSION 2.1.1
 ENV SPARK_HOME /opt/spark
-ENV LIVY_BUILD_VERSION livy-server-0.3.0
+#ENV LIVY_BUILD_VERSION livy-server-0.3.0
 
 # Set install path for Livy
 ENV LIVY_APP_PATH /opt/livy
