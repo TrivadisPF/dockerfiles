@@ -3,7 +3,7 @@ MAINTAINER Trivadis <guido.schmutz@trivadis.com>
 
 ENV MESOS_NATIVE_JAVA_LIBRARY /usr/local/lib/libmesos.so
 
-ENV SPARK_VERSION 2.1.1-bin-hadoop2.7
+ENV SPARK_VERSION 2.2.0-bin-hadoop2.7
 
 # add webupd8 repository
 RUN \
