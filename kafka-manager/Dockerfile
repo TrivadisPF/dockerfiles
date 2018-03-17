@@ -10,7 +10,7 @@ RUN apt-get update -y && \
 
 ENV ZK_HOSTS=localhost:2181 \
     KM_VERSION=1.3.3.17 \
-    KM_REVISION=de5a2fad6c3cb28fa37e79eab1def2609a8c4fff \
+    KM_REVISION=0356db5f2698c36ec676b947c786b8543086dd49 \
     KM_CONFIGFILE="conf/application.conf"
 
 RUN mkdir -p /tmp && \
