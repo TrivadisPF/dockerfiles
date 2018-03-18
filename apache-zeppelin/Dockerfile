@@ -1,4 +1,4 @@
-FROM trivadisbds/spark:2.3.0-hadoop-2.7
+FROM trivadisbds/spark:2.2.0-hadoop-2.7
 
 # SciPy
 RUN set -ex \
