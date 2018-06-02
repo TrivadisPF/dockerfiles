@@ -1,6 +1,6 @@
 FROM openjdk:8u131-jdk
 
-ENV JG_VERSION 0.1.1
+ENV JG_VERSION 0.2.0
 
 LABEL version ${JG_VERSION}
 LABEL description "JanusGraph v${JG_VERSION}"
