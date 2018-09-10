@@ -1,4 +1,4 @@
-FROM streamsets/datacollector:3.4.1
+FROM streamsets/datacollector:3.4.2
 
 # Build time argument to install packages
 ARG PACKAGES_TO_INSTALL=streamsets-datacollector-apache-kafka_1_0-lib,streamsets-datacollector-apache-kafka_0_11-lib,streamsets-datacollector-jdbc-lib,streamsets-datacollector-groovy_2_4-lib
