@@ -9,7 +9,7 @@ RUN apt-get update -y && \
     apt-get clean all
 
 ENV ZK_HOSTS=localhost:2181 \
-    KM_VERSION=1.3.3.18 \
+    KM_VERSION=1.3.3.22 \
     KM_REVISION=0356db5f2698c36ec676b947c786b8543086dd49 \
     KM_CONFIGFILE="conf/application.conf"
 
