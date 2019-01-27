@@ -8,9 +8,10 @@ RUN apt-get update -y && \
     apt-get install -y git wget unzip && \
     apt-get clean all
 
+# when updating the version, make sure to also update the revision !!!
 ENV ZK_HOSTS=localhost:2181 \
     KM_VERSION=1.3.3.22 \
-    KM_REVISION=0356db5f2698c36ec676b947c786b8543086dd49 \
+    KM_REVISION=04b585eddd81768b03b6989efcfb5032307a1888 \
     KM_CONFIGFILE="conf/application.conf"
 
 RUN mkdir -p /tmp && \
@@ -21,7 +22,7 @@ RUN mkdir -p /tmp && \
     echo 'scalacOptions ++= Seq("-Xmax-classfile-name", "200")' >> build.sbt && \
     ./sbt clean dist && \
     unzip  -d / ./target/universal/kafka-manager-${KM_VERSION}.zip && \
-    rm -fr /tmp/* /root/.sbt /root/.ivy2 
+    rm -fr /tmp/* /root/.sbt /root/.ivy2
 
 RUN printf '#!/bin/sh\nexec ./bin/kafka-manager -Dconfig.file=${KM_CONFIGFILE} "${KM_ARGS}" "${@}"\n' > /kafka-manager-${KM_VERSION}/km.sh && \
     chmod +x /kafka-manager-${KM_VERSION}/km.sh
