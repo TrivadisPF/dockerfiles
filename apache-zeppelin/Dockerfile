@@ -1,66 +1,20 @@
-FROM gettyimages/spark:2.3.1-hadoop-3.0
+FROM bde2020/spark-base:2.4.0-hadoop2.8
+MAINTAINER Ivan Ermilov <ivan.s.ermilov@gmail.com>
+MAINTAINER Gezim Sejdiu <g.sejdiu@gmail.com>
 
-# SciPy
-RUN set -ex \
- && buildDeps=' \
-    libpython3-dev \
-    build-essential \
-    pkg-config \
-    gfortran \
- ' \
- && apt-get update && apt-get install -y --no-install-recommends \
-    $buildDeps \
-    ca-certificates \
-    wget \
-    liblapack-dev \
-    libopenblas-dev \
- && packages=' \
-    numpy \
-    pandasql \
-    scipy \
- ' \
- && pip3 install $packages \
- && apt-get purge -y --auto-remove $buildDeps \
- && apt-get clean \
- && rm -rf /var/lib/apt/lists/*
+ENV APACHE_SPARK_VERSION 2.4.0
+ENV APACHE_HADOOP_VERSION 2.8.0
+ENV ZEPPELIN_VERSION 0.8.1
 
-# Zeppelin
-ENV ZEPPELIN_PORT 8080
-ENV ZEPPELIN_HOME /usr/zeppelin
-ENV ZEPPELIN_CONF_DIR $ZEPPELIN_HOME/conf
-ENV ZEPPELIN_NOTEBOOK_DIR $ZEPPELIN_HOME/notebook
-ENV ZEPPELIN_COMMIT v0.8.0
-RUN echo '{ "allow_root": true }' > /root/.bowerrc
-RUN set -ex \
- && buildDeps=' \
-    git \
-    bzip2 \
-    npm \
- ' \
- && apt-get update && apt-get install -y --no-install-recommends $buildDeps \
- && curl -sL http://archive.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz \
-   | gunzip \
-   | tar x -C /tmp/ \
- && git clone https://github.com/apache/zeppelin.git /usr/src/zeppelin \
- && cd /usr/src/zeppelin \
- && git checkout -q $ZEPPELIN_COMMIT \
- && dev/change_scala_version.sh "2.11" \
- && MAVEN_OPTS="-Xmx2g -XX:MaxPermSize=1024m" /tmp/apache-maven-3.3.9/bin/mvn --batch-mode package -DskipTests -Pscala-2.11 -Pbuild-distr \
-  -pl 'zeppelin-interpreter,zeppelin-zengine,zeppelin-display,spark-dependencies,spark,markdown,angular,shell,cassandra,hbase,postgresql,jdbc,python,elasticsearch,zeppelin-web,zeppelin-server,zeppelin-distribution' \
- && tar xvf /usr/src/zeppelin/zeppelin-distribution/target/zeppelin*.tar.gz -C /usr/ \
- && mv /usr/zeppelin* $ZEPPELIN_HOME \
- && mkdir -p $ZEPPELIN_HOME/logs \
- && mkdir -p $ZEPPELIN_HOME/run \
- && apt-get purge -y --auto-remove $buildDeps \
- && rm -rf /var/lib/apt/lists/* \
- && rm -rf /usr/src/zeppelin \
- && rm -rf /root/.m2 \
- && rm -rf /root/.npm \
- && rm -rf /tmp/*
+RUN apt-get update && apt-get install wget
+RUN set -x \
+    && curl -fSL "http://www-eu.apache.org/dist/zeppelin/zeppelin-${ZEPPELIN_VERSION}/zeppelin-${ZEPPELIN_VERSION}-bin-all.tgz" -o /tmp/zeppelin.tgz \
+    && tar -xzvf /tmp/zeppelin.tgz -C /opt/ \
+    && mv /opt/zeppelin-* /opt/zeppelin \
+    && rm /tmp/zeppelin.tgz
 
-RUN ln -s /usr/bin/pip3 /usr/bin/pip \
- && ln -s /usr/bin/python3 /usr/bin/python
+# ENV SPARK_SUBMIT_OPTIONS "--jars /opt/zeppelin/sansa-examples-spark-2018-06.jar"
 
-ADD about.json $ZEPPELIN_NOTEBOOK_DIR/2BTRWA9EV/note.json
-WORKDIR $ZEPPELIN_HOME
-CMD ["bin/zeppelin.sh"]
+WORKDIR /opt/zeppelin
+
+CMD ["/opt/zeppelin/bin/zeppelin.sh"]
