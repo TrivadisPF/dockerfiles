@@ -1,12 +1,10 @@
 FROM bde2020/spark-base:2.4.0-hadoop2.7
-MAINTAINER Ivan Ermilov <ivan.s.ermilov@gmail.com>
-MAINTAINER Gezim Sejdiu <g.sejdiu@gmail.com>
+MAINTAINER Guido Schmutz <guido.schmutz@trivadis.com>
 
 ENV APACHE_SPARK_VERSION 2.4.0
 ENV APACHE_HADOOP_VERSION 2.7.0
 ENV ZEPPELIN_VERSION 0.8.1
 
-RUN apt-get update && apt-get install wget
 RUN set -x \
     && curl -fSL "http://www-eu.apache.org/dist/zeppelin/zeppelin-${ZEPPELIN_VERSION}/zeppelin-${ZEPPELIN_VERSION}-bin-all.tgz" -o /tmp/zeppelin.tgz \
     && tar -xzvf /tmp/zeppelin.tgz -C /opt/ \
