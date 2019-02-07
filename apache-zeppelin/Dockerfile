@@ -1,9 +1,9 @@
-FROM bde2020/spark-base:2.4.0-hadoop2.8
+FROM bde2020/spark-base:2.4.0-hadoop2.7
 MAINTAINER Ivan Ermilov <ivan.s.ermilov@gmail.com>
 MAINTAINER Gezim Sejdiu <g.sejdiu@gmail.com>
 
 ENV APACHE_SPARK_VERSION 2.4.0
-ENV APACHE_HADOOP_VERSION 2.8.0
+ENV APACHE_HADOOP_VERSION 2.7.0
 ENV ZEPPELIN_VERSION 0.8.1
 
 RUN apt-get update && apt-get install wget
