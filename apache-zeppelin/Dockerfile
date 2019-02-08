@@ -1,8 +1,8 @@
-FROM bde2020/spark-base:2.3.2-hadoop2.8
+FROM bde2020/spark-base:2.3.2-hadoop2.7
 MAINTAINER Guido Schmutz <guido.schmutz@trivadis.com>
 
 ENV APACHE_SPARK_VERSION 2.3.2
-ENV APACHE_HADOOP_VERSION 2.8.0
+ENV APACHE_HADOOP_VERSION 2.7.0
 ENV ZEPPELIN_VERSION 0.8.0
 
 RUN set -x \
