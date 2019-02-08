@@ -13,6 +13,8 @@ RUN set -x \
 
 # ENV SPARK_SUBMIT_OPTIONS "--jars /opt/zeppelin/sansa-examples-spark-2018-06.jar"
 
+ENV SPARK_HOME /spark
+
 WORKDIR /opt/zeppelin
 
 CMD ["/opt/zeppelin/bin/zeppelin.sh"]
