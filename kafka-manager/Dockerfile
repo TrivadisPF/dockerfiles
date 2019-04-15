@@ -11,7 +11,7 @@ RUN apt-get update -y && \
 # when updating the version, make sure to also update the revision !!!
 ENV ZK_HOSTS=localhost:2181 \
     KM_VERSION=1.3.3.23 \
-    KM_REVISION=04b585eddd81768b03b6989efcfb5032307a1888 \
+    KM_REVISION=2ca848bfdf542bf1da8fc860db9bbcc99548f89d \
     KM_CONFIGFILE="conf/application.conf"
 
 RUN mkdir -p /tmp && \
