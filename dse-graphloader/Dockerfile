@@ -8,13 +8,14 @@ RUN groupadd -r dse  \
 # Get the version of DSE we're installing from the build argument
 #ARG DSE_GRAPHLOADER_VERSION
 #ENV DSE_GRAPHLOADER_VERSION ${DSE_GRAPHLOADER_VERSION}
-ENV DSE_GRAPHLOADER_VERSION 6.0.0
+ENV DSE_GRAPHLOADER_VERSION 6.7.3
 
 # Add DSE (we're assuming it's available in the same directory as this Dockerfile)
-# Hint: Use the download.sh script in the build directory to download a tarball
-ADD dse-graph-loader-${DSE_GRAPHLOADER_VERSION}-bin.tar.gz /opt
+#  download a tarball from S3 bucket
+RUN wget https://s3.eu-central-1.amazonaws.com/gschmutz-download/dse-graph-loader-${DSE_GRAPHLOADER_VERSION}-bin.tar.gz -O dse-graph-loader-${DSE_GRAPHLOADER_VERSION}-bin.tar.gz
+RUN tar -xzvf dse-graph-loader-${DSE_GRAPHLOADER_VERSION}-bin.tar.gz
 
 # Link dse regardless of version to /opt/dse
-RUN ln -s /opt/dse-graph-loader* /opt/dse-graph-loader \
-    && chown -R dse:dse /opt/dse-graph-loader*
+RUN ln -s /dse-graph-loader* /dse-graph-loader \
+    && chown -R dse:dse /dse-graph-loader*
 
