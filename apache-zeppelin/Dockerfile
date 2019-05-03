@@ -7,6 +7,7 @@ ENV ZEPPELIN_VERSION 0.8.1
 
 RUN set -x \
     && curl -fSL "http://www-eu.apache.org/dist/zeppelin/zeppelin-${ZEPPELIN_VERSION}/zeppelin-${ZEPPELIN_VERSION}-bin-all.tgz" -o /tmp/zeppelin.tgz \
+    && mkdir -p /opt \
     && tar -xzvf /tmp/zeppelin.tgz -C /opt/ \
     && mv /opt/zeppelin-* /opt/zeppelin \
     && rm /tmp/zeppelin.tgz
