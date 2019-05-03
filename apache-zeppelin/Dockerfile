@@ -1,4 +1,4 @@
-FROM bde2020/spark-base:2.3.2-hadoop2.7
+FROM bde2020/spark-base:2.4.0-hadoop2.7
 MAINTAINER Guido Schmutz <guido.schmutz@trivadis.com>
 
 ENV APACHE_SPARK_VERSION 2.4.0
