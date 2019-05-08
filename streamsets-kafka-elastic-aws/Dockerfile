@@ -1,4 +1,4 @@
-FROM streamsets/datacollector:3.8.1
+FROM streamsets/datacollector:3.8.2
 
 # Build time argument to install packages
 ARG PACKAGES_TO_INSTALL=streamsets-datacollector-apache-kafka_2_0-lib,streamsets-datacollector-apache-kafka_1_1-lib,streamsets-datacollector-elasticsearch_5-lib,streamsets-datacollector-aws-lib,streamsets-datacollector-groovy_2_4-lib
