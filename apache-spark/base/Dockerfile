@@ -8,6 +8,7 @@ ENV INIT_DAEMON_BASE_URI http://identifier/init-daemon
 ENV INIT_DAEMON_STEP spark_master_init
 
 ENV SPARK_VERSION=2.4.0
+ARG PYTHON_VERSION=3.7.1
 
 COPY wait-for-step.sh /
 COPY execute-step.sh /
@@ -30,8 +31,6 @@ RUN apt-get-install -y curl wget \
 
 ENV SPARK_HOME /spark/
 ENV PATH /spark/bin:$PATH
-
-ARG PYTHON_VERSION=3.7.1
 
 ### Setup python:{version} ###
 # helpful links:
