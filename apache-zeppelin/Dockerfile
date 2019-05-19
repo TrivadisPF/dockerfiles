@@ -1,4 +1,4 @@
-FROM trivadis/spark-base:2.4.0-hadoop3.1
+FROM trivadis/apache-spark-base:2.4.0-hadoop3.1
 MAINTAINER Guido Schmutz <guido.schmutz@trivadis.com>
 
 #ENV APACHE_SPARK_VERSION 2.4.3
