@@ -1,4 +1,4 @@
-FROM trivadis/apache-spark-base:2.4.0-hadoop3.1
+FROM trivadis/apache-spark-base:2.4.3-hadoop3.1
 
 MAINTAINER Erika Pauwels <erika.pauwels@tenforce.com>
 MAINTAINER Gezim Sejdiu <g.sejdiu@gmail.com>
