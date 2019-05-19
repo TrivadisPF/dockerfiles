@@ -1,4 +1,4 @@
-FROM trivadis/spark-submit:2.4.0-hadoop3.1
+FROM trivadis/apache-spark-submit:2.4.0-hadoop3.1
 
 MAINTAINER Gezim Sejdiu <g.sejdiu@gmail.com>
 
