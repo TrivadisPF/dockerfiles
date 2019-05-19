@@ -1,4 +1,4 @@
-FROM trivadis/hadoop-base:2.0.0-hadoop3.1.1-java8
+FROM trivadis/apache-hadoop-base:2.0.0-hadoop3.1.1-java8
 
 MAINTAINER Gezim Sejdiu <g.sejdiu@gmail.com>
 MAINTAINER Guido Schmutz <guido.schmutz@gmail.com>
