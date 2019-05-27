@@ -12,8 +12,13 @@ RUN set -x \
     && mv /opt/zeppelin-* /opt/zeppelin \
     && rm /tmp/zeppelin.tgz
 
-# ENV SPARK_SUBMIT_OPTIONS "--jars /opt/zeppelin/sansa-examples-spark-2018-06.jar"
+# install s3cmd
+RUN git clone https://github.com/s3tools/s3cmd.git /tmp/s3cmd \
+	&& cd /tmp/s3cmd \
+	&& python setup.py install \
+	&& rm -rf /tmp/s3cmd
 
+# ENV SPARK_SUBMIT_OPTIONS "--jars /opt/zeppelin/sansa-examples-spark-2018-06.jar"
 ENV SPARK_HOME /spark
 
 WORKDIR /opt/zeppelin
