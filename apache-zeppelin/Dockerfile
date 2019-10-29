@@ -1,8 +1,6 @@
 FROM trivadis/apache-spark-base:2.4.3-hadoop3.1
 MAINTAINER Guido Schmutz <guido.schmutz@trivadis.com>
 
-#ENV APACHE_SPARK_VERSION 2.4.3
-#ENV APACHE_HADOOP_VERSION 3.1.0
 ENV ZEPPELIN_VERSION 0.8.2
 		
 RUN set -x \
