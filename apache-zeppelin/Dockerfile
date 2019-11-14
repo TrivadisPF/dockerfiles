@@ -1,4 +1,4 @@
-FROM trivadis/apache-spark-base:2.4.3-hadoop3.1
+FROM trivadis/apache-spark-base:2.4.3-hadoop2.7.7
 MAINTAINER Guido Schmutz <guido.schmutz@trivadis.com>
 
 ENV ZEPPELIN_VERSION 0.8.2
