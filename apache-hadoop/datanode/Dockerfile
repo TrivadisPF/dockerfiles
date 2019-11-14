@@ -1,4 +1,4 @@
-FROM trivadis/apache-hadoop-base:2.0.0-hadoop3.1.3-java8
+FROM trivadis/apache-hadoop-base:2.0.0-hadoop2.7.7-java8
 
 MAINTAINER Ivan Ermilov <ivan.s.ermilov@gmail.com>
 
