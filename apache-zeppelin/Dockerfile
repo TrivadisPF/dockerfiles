@@ -4,10 +4,8 @@ MAINTAINER Guido Schmutz <guido.schmutz@trivadis.com>
 
 ENV ZEPPELIN_VERSION 0.8.2
 
-RUN apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y \
-        curl \
-        git
+RUN apk update && apk upgrade && \
+    apk add --no-cache bash git openssh
 
 RUN set -x \
     && curl -fSL "http://www-eu.apache.org/dist/zeppelin/zeppelin-${ZEPPELIN_VERSION}/zeppelin-${ZEPPELIN_VERSION}-bin-all.tgz" -o /tmp/zeppelin.tgz \
