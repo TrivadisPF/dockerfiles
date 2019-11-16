@@ -1,4 +1,4 @@
-FROM alpine:3.10
+FROM scottw/alpine-perl
 
 LABEL maintainer="Gezim Sejdiu <g.sejdiu@gmail.com>, Giannis Mouchakis <gmouchakis@gmail.com>, Guido Schmutz <guido.schmutz@gmail.com>"
 
