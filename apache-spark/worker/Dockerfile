@@ -1,7 +1,6 @@
-FROM trivadis/apache-spark-base:2.4.3-hadoop2.7.7
+FROM trivadis/apache-spark-base:2.4.4-hadoop2.8
 
-MAINTAINER Erika Pauwels <erika.pauwels@tenforce.com>
-MAINTAINER Gezim Sejdiu <g.sejdiu@gmail.com>
+LABEL maintainer="Gezim Sejdiu <g.sejdiu@gmail.com>, Giannis Mouchakis <gmouchakis@gmail.com>"
 
 COPY worker.sh /
 
