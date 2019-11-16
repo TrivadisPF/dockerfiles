@@ -36,8 +36,8 @@ RUN chmod +x /wait-for-step.sh && chmod +x /execute-step.sh && chmod +x /finish-
 # Note: this is needed when you use Python 3.3 or greater
 ENV PYTHONHASHSEED 1
 
-#COPY hive-site.xml /spark/conf/
-#COPY spark-env.sh /spark/conf/
+COPY hive-site.xml /spark/conf/
+COPY spark-env.sh /spark/conf/
 
 COPY entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/entrypoint.sh
