@@ -8,7 +8,7 @@ ENV	MAVEN_OPTS	"-Xms2g -Xmx2g"
 
 RUN git clone http://github.com/apache/atlas.git \
 	&& cd atlas \
-	&& mvn clean -DskipTests package -Pdist,embedded-hbase-solr \
+	&& mvn clean -DskipTests package -Pdist \
 	&& mv distro/target/apache-atlas-*-bin.tar.gz /apache-atlas.tar.gz \
 	&& mv distro/target/apache-atlas-*-kafka-hook.tar.gz /apache-atlas-kafka-hook.tar.gz \
 	&& mv distro/target/apache-atlas-*-hive-hook.tar.gz /apache-atlas-hive-hook.tar.gz \
