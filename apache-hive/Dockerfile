@@ -9,7 +9,7 @@ FROM trivadis/apache-hadoop-base:2.0.0-hadoop2.7.7-java8
 
 MAINTAINER guido.schmutz@trivadis.com
 
-ENV HADOOP_VERSION 2.7.7
+ENV HADOOP_VERSION 2.8.5
 ENV HIVE_VERSION 3.1.0
 ENV AWS_VERSION=1.10.75.2
 
